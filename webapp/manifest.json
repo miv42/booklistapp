@@ -1,0 +1,145 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+      "id": "Quickstart",
+      "type": "application",
+      "i18n": "i18n/i18n.properties",
+      "title": "{{appTitle}}",
+      "description": "{{appDescription}}",
+      "applicationVersion": {
+        "version": "1.0.0"
+      },
+
+      "dataSources":{
+        "booksService":{
+          "uri" : "/sap/opu/odata/SAP/ZBOOKS_UBB_VM_SRV",
+          "type" : "OData",
+          "settings" : {
+            "odataVersion" : "2.0"
+          }
+        }
+      }
+    },
+
+    "sap.ui": {
+      "technology": "UI5",
+      "deviceTypes": {
+          "desktop": true,
+          "tablet": true,
+          "phone": true
+      }
+    },
+    "sap.ui5": {
+      "rootView": {
+          "viewName": "Quickstart.view.App",
+          "type": "XML",
+          "async": true,
+          "id": "app"
+      },
+      
+      "dependencies": {
+        "minUI5Version": "1.60",
+        "libs": {
+          "sap.m": {}
+        }
+      },
+
+      "models": {
+        "i18n": {
+          "type": "sap.ui.model.resource.ResourceModel",
+          "settings": {
+            "bundleName": "Quickstart.i18n.i18n",
+            "supportedLocales": [""],
+            "fallbackLocale": ""
+          }
+        },
+
+        "book": {
+          "type": "sap.ui.model.json.JSONModel",
+          "uri": "Books.json"
+        },
+
+        "": {
+          "dataSource" : "booksService",
+          "settings" :{
+            "metadataUrlParams":{
+              "sap-documentation":"heading"
+            },
+            "defaultBindingMode" : "TwoWay",
+            "useBatch":false
+          }
+        }
+      },
+
+      "routing": {
+          "config": {
+              "routerClass": "sap.m.routing.Router",
+              "viewType": "XML",
+              "viewPath": "Quickstart.view",
+              "controlId": "app",
+              "controlAggregation": "pages",
+              "async": true
+          },
+
+          "routes": [
+              {
+                "pattern": "",
+                "name": "overview",
+                "target": "overview"
+              },
+              {
+                "pattern": "detail/{isbn}",
+                "name": "detail",
+                "target": "detail"
+              },
+              {
+                "pattern": "createform",
+                "name": "createform",
+                "target": "createform"
+              },
+              {
+                "pattern": "userview",
+                "name": "userview",
+                "target": "userview"
+              },
+              {
+                "pattern": "clients",
+                "name": "clients",
+                "target": "clients"
+              }
+          ],
+          
+          "targets": {
+            "overview": {
+              "viewId": "overview",
+              "viewName": "Overview"
+          },
+
+          "detail": {
+              "viewId": "detail",
+              "viewName": "Detail"
+          },
+          "createform":{
+            "viewID":"createform",
+            "viewName":"CreateForm"
+          },
+          "userview":{
+            "viewID":"userview",
+            "viewName":"UserView"
+          },
+          "clients":{
+            "viewID":"clients",
+            "viewName":"Clients"
+          }
+        }
+      },
+
+      "resources": {
+        "css": [
+        {
+          "uri": "css/style.css"
+        }
+        ]
+      }
+    }
+  }

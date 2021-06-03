@@ -1,0 +1,96 @@
+<mvc:View
+    controllerName="Quickstart.controller.BookList"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+<Page
+		title="Clients Page"
+        showNavButton="true"
+		navButtonPress=".onNavBack">
+
+   <Table
+      headerText="Clients List with their books isbn"
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{
+         path : '/ClientsSet',
+         sorter : {
+				path : 'Id'
+			}
+      }" >
+      <headerToolbar>
+         <Toolbar>
+            <Title text="Clients"/>
+            <ToolbarSpacer/>
+            
+         </Toolbar>
+      </headerToolbar>
+      <columns>
+			<Column
+				width="12em">
+				<Text text="ID" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Name " />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<Text text="Borrowed Book ISBN" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="Checkout Date" />
+			</Column>
+			<Column
+				hAlign="End">
+				<Text text="Return Date" />
+			</Column>
+		</columns>
+         <items>
+			<ColumnListItem>
+				<cells>
+					<Text
+						text="{Id}" />
+					<Text
+						text="{FirstName} {LastName}" />
+					<Text
+						text="{Isbn}" />
+
+					<Text
+						text="{
+
+                            path: 'CheckoutDate',
+                            type: 'sap.ui.model.type.DateTime',
+
+                            formatOptions: {
+                                pattern: 'dd.MM.yyyy'
+                            },
+                            constraints: {
+                                displayFormat: 'Date'
+                            }
+                    }" />
+
+               <Text
+						text="{
+
+                            path: 'ReturnDate',
+                            type: 'sap.ui.model.type.DateTime',
+
+                            formatOptions: {
+                                pattern: 'dd.MM.yyyy'
+                            },
+                            constraints: {
+                                displayFormat: 'Date'
+                            }
+                    }" />
+				</cells>
+			</ColumnListItem>
+		</items>
+   </Table>
+</Page>
+</mvc:View>

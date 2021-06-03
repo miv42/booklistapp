@@ -1,0 +1,65 @@
+<mvc:View
+    controllerName="Quickstart.controller.UserView"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+<Page
+		title="Clients Page"
+        showNavButton="true"
+		navButtonPress=".onNavBack">
+
+    <List
+      headerText="{i18n>bookListTitle}"
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{
+         path : '/BooksSet',
+         sorter : {
+				path : 'Title'
+			}
+      }" >
+      <headerToolbar>
+         <Toolbar>
+            <Title text="{i18n>bookListTitle}"/>
+            <ToolbarSpacer/>
+            <SearchField width="20%" search=".onFilterBooks" placeholder="Seacrh by title..."/> 
+            <SearchField width="20%" search=".onFilterBooks2" placeholder="Seacrh by author..."/>
+            
+         </Toolbar>
+      </headerToolbar>
+
+         
+      <items>
+         <ObjectListItem
+            title="{Title} by {Author}, published on {
+
+                            path: 'DatePublished',
+                            type: 'sap.ui.model.type.DateTime',
+
+                            formatOptions: {
+                                pattern: 'dd.MM.yyyy'
+                            },
+                            constraints: {
+                                displayFormat: 'Date'
+                            }
+                    }"
+            number="{=parseInt(${AvailableBooks})} pcs"
+            numberState="{=parseInt(${AvailableBooks}) > 5 ? 'Error' : 'Success' }"
+            type="Navigation"
+		    press="onPress"
+            >
+
+            <firstStatus>
+					<ObjectStatus text="{
+						path: '=parseInt(${AvailableBooks})',
+						formatter: '.formatter.statusText'
+					}"/>
+				</firstStatus>
+
+                
+			</ObjectListItem>
+                
+      </items>
+   </List>
+
+</Page>
+</mvc:View>

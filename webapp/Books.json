@@ -1,0 +1,58 @@
+{
+    "Books": [
+      {
+        "Title": "Cryptonomicon",
+        "Author":"Neal Stephenson",
+        "Quantity": 21,
+        "ExtendedPrice": 89.2000,
+        "Publisher": "Arrow Books",
+        "PublishDate": "1999-01-01T00:00:00",
+        "Status": "A"
+      },
+      {
+        "Title": "Idoru",
+        "Author":"William Gibson",
+        "Quantity": 13,
+        "ExtendedPrice": 29.2000,
+        "Publisher": "Berkley",
+        "PublishDate": "1084-04-02T00:00:00",
+        "Status": "A"
+      },
+      {
+        "Title": "Dune",
+        "Author":"frank Herbert",
+        "Quantity": 6,
+        "ExtendedPrice": 21.2000,
+        "Publisher": "Nemira",
+        "PublishDate": "1998-06-10T00:00:00",
+        "Status": "B"
+      },
+      {
+        "Title": "Neuromantul",
+        "Author":"William Gibson",
+        "Quantity": 0,
+        "ExtendedPrice": 10.2000,
+        "Publisher": "Paladin",
+        "PublishDate": "2000-04-01T00:00:00",
+        "Status": "C"
+      },
+      {
+        "Title": "Ready Player One",
+        "Author":"Ernest Cline",
+        "Quantity": 20,
+        "ExtendedPrice": 30.2000,
+        "Publisher": "Nemira",
+        "PublishDate": "2012-04-01T00:00:00",
+        "Status": "B"
+      },
+      {
+        "Title": "Fundatia",
+        "Author":"Isaac Asimov",
+        "Quantity": 49,
+        "ExtendedPrice": 44.2000,
+        "Publisher": "Paladin",
+        "PublishDate": "1987-04-01T00:00:00",
+        "Status": "C"
+      }
+    ]
+  }

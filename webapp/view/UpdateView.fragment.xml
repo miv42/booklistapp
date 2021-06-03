@@ -1,0 +1,82 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:l="sap.ui.layout"
+   xmlns:core="sap.ui.core" >
+   <Dialog
+   id="updetDialog">
+      <content>
+         
+<l:VerticalLayout class="sapUiContentPadding" width="100%">
+		<Label text="ISBN" labelFor="ISBNInput" />
+		<Input
+			id="ISBNInput"
+			class="sapUiSmallMarginBottom"
+			placeholder="Enter ISBN"
+            editable="false"
+			 />
+
+		<Label text="Author" labelFor="AuthorInput" />
+		<Input
+			id="AuthorInput"
+			class="sapUiSmallMarginBottom"
+			placeholder="Enter Author"
+            required="true"
+			/>
+
+        <Label text="Title" labelFor="TitleInput" />
+		<Input
+			id="TitleInput"
+			class="sapUiSmallMarginBottom"
+			placeholder="Enter Title"
+            required="true"
+			/>
+
+        <Label text="Date Published" labelFor="DatePubInput"/>
+		<DateTimePicker
+			id="DatePubInput"
+			placeholder="Enter Date Published"
+			class="sapUiSmallMarginBottom"
+            required="true"/>
+        <!--Input
+            id="DatePubInput"
+            class="sapUiSmallMarginBottom"
+            placeholder="Enter DatePublished"
+            required="true"
+        /-->
+
+        <Label text="Language" labelFor="LanguageInput" />
+		<Input
+			id="LanguageInput"
+			class="sapUiSmallMarginBottom"
+			placeholder="Enter Language"
+            required="true"
+			/>
+            
+        <Label text="Total Books" labelFor="TotalBInput" />
+		<Input
+			id="TotalBInput"
+			class="sapUiSmallMarginBottom"
+			placeholder="Enter Total Books"
+            required="true"
+			/>
+
+        <Label text="Available Books" labelFor="AvailableBInput" />
+		<Input
+			id="AvailableBInput"
+			class="sapUiSmallMarginBottom"
+			placeholder="Enter Available Books"
+            required="true"
+			/>
+
+		<Button text="Submit" press=".onSubmit" />
+	</l:VerticalLayout>
+
+
+      </content>
+    <beginButton>
+         <Button
+            text="Cancel"
+            press=".onCloseDialog"/>
+      </beginButton>
+   </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,45 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:l="sap.ui.layout"
+   xmlns:core="sap.ui.core" >
+   <Dialog
+        id="checkoutDialog">
+      
+<content>
+         
+    <l:VerticalLayout class="sapUiContentPadding" width="100%">
+		<Label text="ISBN" labelFor="ISBNInput" />
+		<Input
+			id="ISBNInput"
+			class="sapUiSmallMarginBottom"
+			placeholder="Enter ISBN"
+            editable="false"
+			 />
+
+		<Label text="FirstName" labelFor="FirstName" />
+		<Input
+			id="FirstNameInput"
+			class="sapUiSmallMarginBottom"
+			placeholder="Enter FirstName"
+            required="true"
+			/>
+        <Label text="LastName" labelFor="LastName" />
+		<Input
+			id="LastNameInput"
+			class="sapUiSmallMarginBottom"
+			placeholder="Enter LastName"
+            required="true"
+			/>
+        
+		<Button text="Submit" press=".onSubmit" />
+	</l:VerticalLayout>
+
+
+      </content>
+    <beginButton>
+         <Button
+            text="Cancel"
+            press=".onCloseDialog"/>
+      </beginButton>
+   </Dialog>
+</core:FragmentDefinition>
